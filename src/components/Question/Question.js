@@ -14,17 +14,22 @@ class Question extends React.Component {
 		this.setState({answer:e.target.value})
 		console.log(e.target.value);
 	}
+
+	componentDidMount() {
+		document.querySelector("input").focus();
+	}
+
 	render() {
 
 
 		return (
 			<div className={classes.Question}>
-				<header></header>
+				{/*<header></header>*/}
 				<div className={classes.questionInner}>
 					<form onSubmit={this.submitForm} action="">
-						<img src="https://www.placecage.com/300/300" alt="img"/>
-						<input type="text" name="answer" value={this.state.answer} onChange={this.onAnswerChange} className={classes.textInput} />
-						<button type="submit"></button>
+						<img src="https://www.loremflickr.com/300/300" alt="img"/>
+						<input autoFocus={true} type="text" name="answer" value={this.state.answer} onChange={this.onAnswerChange} className={classes.textInput} />
+						{/*<button type="submit"></button>*/}
 					</form>
 
 				</div>
