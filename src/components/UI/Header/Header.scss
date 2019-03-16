@@ -1,0 +1,19 @@
+header{
+    height: 9vh;
+    background: #2b2b2b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 12px;
+    box-sizing: border-box;
+
+    .points, .menu{
+        background: white;
+        height: 35px;
+        width: 35px;
+    }
+
+    .menu{
+        border-radius: 50%;
+    }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import Home from './components/Home/Home';
 import {Switch, Route} from 'react-router-dom';
-import Question from "./components/Question/Question";
+import Question from "./components/QuestionLayout/QuestionLayout";
 
 const AppRouter =  () => (
     <Switch>
