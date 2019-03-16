@@ -1,0 +1,84 @@
+.Translator{
+  display: flex;
+  flex-direction: column;
+  height: 91vh;
+  position: relative;
+  
+  .top, .bottom{
+    flex:1;
+    min-height: 50%;
+  }
+  
+  .top {
+    background: #fff;
+    position: relative;
+
+    form{
+      height: 100%;
+      width: 100%;
+
+      position: relative;
+      .inputField{
+        width: 100%;
+        //height: 100%;
+        font-size: 40px;
+        box-sizing: border-box;
+        padding: 20px;
+
+        &:focus{
+          outline-offset: 0;
+          outline: none;
+        }
+
+
+
+      }
+
+      i{
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 30px;
+        cursor: pointer;
+        transition: 0.3s all ease-out;
+
+        &[class*='rotateMe']{
+          @keyframes rotateCross {
+            from {transform:rotate(0deg);}
+            to {transform:rotate(180deg);}
+          }
+
+          animation: rotateCross .3s linear 0s forwards;
+
+        }
+      }
+
+
+    }
+
+
+
+
+  }
+
+  .submitButton{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    background: #000;
+    width: 80px;
+    height: 80px;
+    z-index: 2;
+    border-radius: 50% ;
+  }
+  
+  .bottom{
+    background: dodgerblue;
+    color: #fff;
+    padding: 20px;
+    font-size: 40px;
+    box-sizing: border-box;
+  }
+
+}
