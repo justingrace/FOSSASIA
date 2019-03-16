@@ -42,14 +42,11 @@ header{
             transition: all 0.3s ease-out;
             z-index: 1;
 
-            &[class*='showIcons'] div{
+            &[class*='showIcons'] img{
                 visibility: visible;
                 opacity: 1;
             }
-
-            div{
-                background: $black;
-                border-radius: 50%;
+            img{
                 height: 30px;
                 width: 30px;
                 visibility: hidden;
@@ -57,19 +54,15 @@ header{
                 transition: all 0.3s ease-out;
                 margin-left: 35px;
                 box-sizing: border-box;
-
             }
 
         }
-        &[class*="active"] i{
-            opacity: 0;
-
-        }
+        //&[class*="active"] i{
+        //    opacity: 0;
+        //}
         &[class*="active"] .extendedMenu{
             width: 270px;
             z-index: 2;
-
-
 
         }
     }

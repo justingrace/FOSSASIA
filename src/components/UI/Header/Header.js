@@ -2,6 +2,9 @@ import React from "react"
 import classes from "./Header.scss"
 import Coin from "../../../../assets/coins.svg"
 import {Link} from 'react-router-dom';
+import Leaderboard from '../../../../assets/leaderboard.svg';
+import DictionaryIcon from '../../../../assets/dictionary.svg';
+import GameIcon from '../../../../assets/game.svg';
 
 class Header extends React.Component {
 
@@ -16,8 +19,8 @@ class Header extends React.Component {
 		else setTimeout(()=>{extendedMenu.classList.add("showIcons")}, 150)
 	}
 	onMenuClick = () => {
-		this.toggleIcons();
 		this.toggleMenu();
+		this.toggleIcons();
 	}
 
 	render() {
@@ -33,9 +36,9 @@ class Header extends React.Component {
 				<div id="menu" onClick={this.onMenuClick} className={classes.menu}>
 					<i className="material-icons">home</i>
 					<div id="extendedMenu" className={classes.extendedMenu}>
-						<div className={classes.game}></div>
-						<div className={classes.dictionary}></div>
-						<div className={classes.leaderboard}></div>
+						<img className={classes.game} src={GameIcon} alt=""/>
+						<img className={classes.dictionary} src={DictionaryIcon} alt=""/>
+						<img className={classes.leaderboard} src={Leaderboard} alt=""/>
 					</div>
 				</div>
 			</header>
