@@ -7,6 +7,8 @@ class QuestionLayout extends React.Component {
 
 	state = {
 		index: 0,
+		changeWord: false,
+		currentWord: {},
 		data: [
 			{
 				en: 'water',
@@ -27,9 +29,26 @@ class QuestionLayout extends React.Component {
 		]
 	}
 
+	changeWord = () => {
+		const url= "https://quirky-locket.glitch.me/getword";
+		fetch(url)
+			.then((resp) => resp.json())
+			.then((data) => {
+				this.setState(prev => ({currentWord:{...data[0]}}))
+			})
+			.catch(err=>console.log(err))
+	}
+	componentDidMount() {
+		this.changeWord();
+		console.log(this.state.people)
+	}
+
+
 	incrementIndex = () => {
 		console.log(this.state.data.length);
-		this.setState(prevState => ({index: ((prevState.index+1) % (prevState.data.length))}));
+		this.changeWord();
+
+		// this.setState(prevState => ({changeWord: true}));
 	}
 
 	render() {
@@ -38,7 +57,7 @@ class QuestionLayout extends React.Component {
 		return (
 			<div className={classes.QuestionLayout}>
 				<Header />
-				<Question data={this.state.data[this.state.index]} incrementIndex={this.incrementIndex} />
+				<Question question={this.state.currentWord} data={this.state.data[this.state.index]} incrementIndex={this.incrementIndex} />
 			</div>
 		)
 	}

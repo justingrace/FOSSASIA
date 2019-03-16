@@ -44,6 +44,7 @@
   .bgOverlay {
     position: absolute;
     left: 0;
+    z-index: 5;
     top: -100%;
     width: 100vw;
     height: 100vh;
@@ -73,7 +74,7 @@
     width: 300px;
     border-radius: 8px;
     background-position: center;
-    background-size: 100%;
+    background-size: 50%;
     background-repeat: no-repeat;
     //background-image: url('../../../assets/loader.svg');
   }

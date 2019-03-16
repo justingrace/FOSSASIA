@@ -15,8 +15,19 @@ class Question extends React.Component {
 	}
 	submitForm = e => {
 		e.preventDefault();
+		console.log(this.props.question._id);
 		console.log(this.state.answer);
 
+		fetch('https://quirky-locket.glitch.me/answer', {
+			method: 'post',
+			body: JSON.stringify({_id:this.props.question._id , answer: this.state.answer}),
+			headers: {
+				'Content-Type': 'application/json',
+				'Access-Control-Allow-Origin': '*'
+			},
+		}).then(function(response) {
+			console.log(response.json())
+		})
 		this.toggleBgOverlay();
 
 
@@ -34,9 +45,6 @@ class Question extends React.Component {
 
 	componentDidMount() {
 		document.querySelector("input").focus();
-		// setTimeout(()=>{
-		// 	document.getElementById("imageBox").style.backgroundImage=`url(${this.props.data.image})`;
-		// }, 1000)
 	}
 
 	render() {
@@ -48,12 +56,12 @@ class Question extends React.Component {
 				</div>
 				<form autoComplete="off"  onSubmit={this.submitForm} action="">
 					<div id="imageBox" className={classes.imageBox} style={{
-						backgroundImage: `url(${this.props.data.image})`
+						backgroundImage: `url(${this.props.question.url})`
 					}}></div>
 					{/*<img src={this.props.data.image} alt="img"/>*/}
 					<div className={classes.languages}>
-						<p className={classes.english}>{this.props.data.en}</p>
-						<p className={classes.lao}>{this.props.data.lo}</p>
+						<p className={classes.english}>{this.props.question.word}</p>
+						<p className={classes.lao}>{this.props.question.lao}</p>
 					</div>
 					<input autoFocus={true} type="text" name="answer" value={this.state.answer}
 						   onChange={this.onAnswerChange} className={classes.textInput}/>

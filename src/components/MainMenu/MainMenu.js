@@ -1,6 +1,6 @@
 import React from "react"
 import classes from "./MainMenu.scss"
-import DictIcon from "../../../assets/dictionary.svg"
+import DictIcon from "../../../assets/dict.png"
 import GameIcon from "../../../assets/game.svg"
 import {Link} from "react-router-dom"
 
@@ -13,7 +13,7 @@ const MainMenu = () => {
 			</div>
 
 			<div className={classes.bottom}>
-				<Link to="dictionary"><img src={DictIcon} alt=""/></Link>
+				<Link to="dictionary"><img className={classes.translate} src={DictIcon} alt=""/></Link>
 			</div>
 		</div>
 	)

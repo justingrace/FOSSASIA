@@ -8,19 +8,26 @@ import GameIcon from '../../../../assets/game.svg';
 
 class Header extends React.Component {
 
-	toggleMenu = () => {
-		let menu = document.getElementById("menu");
-		if(menu.classList.contains("active")) setTimeout(()=>{menu.classList.remove("active")}, 150)
-		else menu.classList.add("active");
+	toggleMenu = (menu) => {
+		if(menu.classList.contains("active")) menu.classList.remove("active")
+		else {
+			console.log("showing menu!" + Date.now());
+			menu.classList.add("active");
+		}
 	}
-	toggleIcons = () => {
-		let extendedMenu = document.getElementById("extendedMenu");
+	toggleIcons = (extendedMenu) => {
+
 		if(extendedMenu.classList.contains("showIcons")) extendedMenu.classList.remove("showIcons");
+		// else extendedMenu.classList.add("showIcons");
 		else setTimeout(()=>{extendedMenu.classList.add("showIcons")}, 150)
 	}
 	onMenuClick = () => {
-		this.toggleMenu();
-		this.toggleIcons();
+		let menu = document.getElementById("menu");
+		let extendedMenu = document.getElementById("extendedMenu");
+		console.log("click" + Date.now());
+
+		this.toggleMenu(menu);
+		this.toggleIcons(extendedMenu);
 	}
 
 	render() {
@@ -36,9 +43,11 @@ class Header extends React.Component {
 				<div id="menu" onClick={this.onMenuClick} className={classes.menu}>
 					<i className="material-icons">home</i>
 					<div id="extendedMenu" className={classes.extendedMenu}>
-						<img className={classes.game} src={GameIcon} alt=""/>
-						<img className={classes.dictionary} src={DictionaryIcon} alt=""/>
-						<img className={classes.leaderboard} src={Leaderboard} alt=""/>
+						<Link to="question"><img className={classes.game} src={GameIcon} alt=""/></Link>
+
+						<Link to="main"><img className={classes.dictionary} src={DictionaryIcon} alt=""/></Link>
+
+						<Link to="leaderboard"><img className={classes.leaderboard} src={Leaderboard} alt=""/></Link>
 					</div>
 				</div>
 			</header>

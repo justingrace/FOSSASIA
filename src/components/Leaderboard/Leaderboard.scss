@@ -1,0 +1,70 @@
+@import "../../colors.scss";
+.Leaderboard {
+    height: 100vh;
+    background: url("../../../assets/pat.png");
+    //background: lightgrey;
+    h1{
+        font-style: 50px;
+        text-align: center;
+        margin-top: 0;
+        padding-top: 20px;
+    }
+
+    .spinner{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50%;
+        margin-top: 100px;
+    }
+
+    .person{
+        width: 94%;
+        margin: 14px auto;
+        border-radius: 8px;
+        height: 50px;
+        background: #fff;
+        box-sizing: border-box;
+        padding: 3px 10px 3px 10px;
+        font-size: 14px;
+        //background: red;
+        box-shadow: 0 0 3px rgba(0,0,0,0.15), 0 3px 3px rgba(0,0,0,0.12);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: #000;
+        .left{
+            display: flex;
+            height: 100%;
+
+            img{
+                height: 100%;
+                margin-right: 20px;
+                width: 55px;
+
+            }
+            .noWreath{
+                margin-right: 20px;
+                width: 55px;
+                height: 53px;
+                background: transparent;
+            }
+
+            .name{
+                width: 170px;
+            }
+        }
+
+
+
+        .points{
+          font-size: 20px;
+        }
+
+        &[class*='you']{
+            $highlight: #f4bf1c;
+            color: $highlight;
+
+        }
+    }
+}
