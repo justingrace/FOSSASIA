@@ -1,23 +1,4 @@
-.QuestionLayout{
-
-    .bgOverlay{
-        position: absolute;
-        left: 0;
-        top: -100%;
-        width: 100vw;
-        height: 100vh;
-        background: #2b2b2b;
-        transition: 0.5s all ease-out;
-        opacity: 0;
-        visibility: hidden;
-
-
-        &[class*="active"]{
-            top: 0;
-            opacity: 1;
-            visibility: visible;
-        }
-    }
+.QuestionLayout {
 
 
 }

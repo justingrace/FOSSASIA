@@ -1,12 +1,14 @@
-
+@import "../../colors.scss";
 .Question {
   padding-top: 18px;
   height: 91vh;
-  background: grey;
+  background: $white;
+  box-sizing: border-box;
 
 
   img {
     border-radius: 8px;
+    background: url('../../../assets/loader.svg') no-repeat;
   }
 
   form {
@@ -19,9 +21,10 @@
     display: flex;
     justify-content: space-around;
     width: 300px;
-    color: #fff;
+    color: $black;
 
     .english, .lao {
+
 
     }
   }
@@ -32,10 +35,47 @@
     border-radius: 5px;
     border: none;
     height: 30px;
-    background: #2b2b2b;
+    background: $black;
     color: #fff;
     padding: 6px 10px;
     font-size: 14px;
+  }
+
+  .bgOverlay {
+    position: absolute;
+    left: 0;
+    top: -100%;
+    width: 100vw;
+    height: 100vh;
+    background: $black;
+    color: $white;
+    transition: 0.5s all ease-out;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    p{
+      margin: 5px;
+    }
+    &[class*="active"] {
+      top: 0;
+      opacity: 1;
+      visibility: visible;
+    }
+
+  }
+
+  .imageBox{
+    height: 170px;
+    width: 300px;
+    border-radius: 8px;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    //background-image: url('../../../assets/loader.svg');
   }
 }
 
