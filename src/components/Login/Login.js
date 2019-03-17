@@ -63,7 +63,7 @@ class Login extends React.Component{
 				</div>
 
 				<GoogleLogin
-					clientId="392862027300-a4i9hiqarhho1hj4kveu55epe61oi2kl.apps.googleusercontent.com"
+					clientId="932926853812-uf7in7asn8kvvbukmbgq91no2sgc6ihq.apps.googleusercontent.com"
 					buttonText="LOGIN"
 					onSuccess={this.responseGoogle}
 					onFailure={this.responseGoogle}
