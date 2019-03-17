@@ -13,6 +13,9 @@ class Translator extends React.Component {
 
 	submitForm = e => {
 		e.preventDefault();
+		let spinner = document.getElementById("spinner")
+		spinner.classList.add("rotateMe");
+		setTimeout(()=>{spinner.classList.remove("rotateMe")}, 1000)
 
 		fetch('https://quirky-locket.glitch.me/translate', {
 			method: 'post',
@@ -43,7 +46,11 @@ class Translator extends React.Component {
 						<input autoFocus={true} id={"inputField"} type="text"className={classes.inputField} type="text" value={this.state.input} onChange={this.handleInputChange}  />
 						<i id="closeIcon" onClick={this.handleCrossClick} className="material-icons">close</i>
 					</form>
-					<div className={classes.submitButton} onClick={this.submitForm}></div>
+					<div className={classes.submitButton} onClick={this.submitForm}>
+						<i id="spinner" className="material-icons">
+							cached
+						</i>
+					</div>
 				</div>
 
 				<div className={classes.bottom}>

@@ -3,6 +3,11 @@
   flex-direction: column;
   height: 91vh;
   position: relative;
+
+  @keyframes rotateCross {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(180deg);}
+  }
   
   .top, .bottom{
     flex:1;
@@ -43,10 +48,7 @@
         transition: 0.3s all ease-out;
 
         &[class*='rotateMe']{
-          @keyframes rotateCross {
-            from {transform:rotate(0deg);}
-            to {transform:rotate(180deg);}
-          }
+
 
           animation: rotateCross .3s linear 0s forwards;
 
@@ -66,16 +68,28 @@
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 50%);
-    background: #e6d9d9;
+    background: #676767;
     width: 80px;
     height: 80px;
     z-index: 2;
     border-radius: 50% ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i{
+      font-size: 50px;
+      color: white;
+
+      &[class*='rotateMe']{
+        animation: rotateCross .5s linear 0s forwards;
+      }
+    }
   }
   
   .bottom{
-    background: dodgerblue;
-    color: #5f5f5f;
+    background: #e0e0e0;
+    color: #000;
     padding: 20px;
     font-size: 40px;
     box-sizing: border-box;

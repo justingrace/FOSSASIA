@@ -27,7 +27,7 @@ header{
         i{
             z-index: 2;
             opacity: 1;
-            color: #fff;
+            color: #ea3c3b;
             transition: all 0.1s ease-out;
 
         }
@@ -35,7 +35,7 @@ header{
             position: absolute;
             right: 0;
             top: 0;
-            background: $white;
+            background: white;
             border-radius: 20px;
             @extend %nav-items;
             justify-content: flex-start;
