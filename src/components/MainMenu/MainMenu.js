@@ -13,7 +13,7 @@ const MainMenu = () => {
 			</div>
 
 			<div className={classes.bottom}>
-				<Link to="dictionary"><img className={classes.translate} src={DictIcon} alt=""/></Link>
+				<Link to="translator"><img className={classes.translate} src={DictIcon} alt=""/></Link>
 			</div>
 		</div>
 	)

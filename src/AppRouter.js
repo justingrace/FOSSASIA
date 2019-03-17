@@ -14,8 +14,9 @@ const AppRouter =  () => (
             <Route path='/translator' component={Translator}/>
             <Route path='/main' component={MainMenu}/>
             <Route path='/leaderboard' component={Leaderboard}/>
+            {/*<Route path='/dictionary' component={Translator}/>*/}
 
-            <Route path='/' component={Leaderboard}/>
+            <Route path='/' component={MainMenu}/>
         </Switch>
 
 );

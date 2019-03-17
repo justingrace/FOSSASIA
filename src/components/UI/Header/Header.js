@@ -8,6 +8,10 @@ import GameIcon from '../../../../assets/game.svg';
 
 class Header extends React.Component {
 
+	state = {
+		userData: {}
+	}
+
 	toggleMenu = (menu) => {
 		if(menu.classList.contains("active")) menu.classList.remove("active")
 		else {
@@ -30,6 +34,12 @@ class Header extends React.Component {
 		this.toggleIcons(extendedMenu);
 	}
 
+	componentDidMount() {
+		let userData = JSON.parse(sessionStorage.getItem("userData"));
+		if(userData) this.setState({userData})
+	}
+
+
 	render() {
 		return (
 			<header>
@@ -38,14 +48,14 @@ class Header extends React.Component {
 						<img src={Coin} alt=""/>
 					</Link>
 
-					<p>125</p>
+					<p>{this.state.userData.points}</p>
 				</div>
 				<div id="menu" onClick={this.onMenuClick} className={classes.menu}>
 					<i className="material-icons">home</i>
 					<div id="extendedMenu" className={classes.extendedMenu}>
 						<Link to="question"><img className={classes.game} src={GameIcon} alt=""/></Link>
 
-						<Link to="main"><img className={classes.dictionary} src={DictionaryIcon} alt=""/></Link>
+						<Link to="translator"><img className={classes.dictionary} src={DictionaryIcon} alt=""/></Link>
 
 						<Link to="leaderboard"><img className={classes.leaderboard} src={Leaderboard} alt=""/></Link>
 					</div>

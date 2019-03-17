@@ -15,16 +15,22 @@ class Translator extends React.Component {
 		e.preventDefault();
 		console.log(this.state.input);
 
-		fetch('https://quirky-locket.glitch.me/findWord', {
+		fetch('https://quirky-locket.glitch.me/translate', {
 			method: 'post',
 			body: JSON.stringify({word:this.state.input}),
 			headers: {
 				'Content-Type': 'application/json',
 				'Access-Control-Allow-Origin': '*'
 			},
-		}).then(function(response) {
-			return console.log(response.json())
-		}).then(data => console.log(data))
+		})
+			.then((response) => {
+				return response.json();
+			})
+			.then(data => {
+				// console.log(data)
+				this.setState({output: data})
+				// sessionStorage.setItem("userData", JSON.stringify(data))
+			});
 	}
 	handleCrossClick = (e) => {
 		e.target.classList.add("rotateMe");

@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./Login.scss";
-
+import {Route, withRouter} from 'react-router-dom';
 import FBLogo from '../../../assets/fb.svg';
 import GLLogo from '../../../assets/gl.svg';
 import GoogleLogin from "react-google-login";
@@ -10,6 +10,12 @@ import FacebookLogin from "react-facebook-login";
 class Login extends React.Component{
 	state = {
 		redirect: false
+	}
+
+	componentDidMount() {
+		const userData = sessionStorage.getItem("userData");
+		// console.log("USER EXISTS");
+		if(userData) this.props.history.push('/main')
 	}
 
 	signUp = (res, type) => {
@@ -22,7 +28,7 @@ class Login extends React.Component{
 
 		fetch(`https://quirky-locket.glitch.me/signup/${type}`, {
 			method: "post",
-			body: body,
+			body: JSON.stringify(body),
 			headers: {
 				"Content-Type": "application/json",
 				"Access-Control-Allow-Origin": "*"
@@ -31,7 +37,11 @@ class Login extends React.Component{
 			.then((response) => {
 				return response.json();
 			})
-			.then(data => sessionStorage.setItem("userData", JSON.stringify(data)));
+			.then(data => {
+				// this.setState({redirect: true})
+				sessionStorage.setItem("userData", JSON.stringify(data))
+				this.props.history.push('/main')
+			});
 
 	};
 
@@ -51,19 +61,21 @@ class Login extends React.Component{
 	render(){
 		return (
 			<div className={classes.Login}>
+
+				{/*{this.state.redirect && <Route to="/main" />}*/}
 				<div className={classes.logo}></div>
 				<div className={classes.buttons}>
-					<div onClick={this.handleFBClick} className={classes.fb}>
-						<img src={FBLogo} alt=""/>
-						<p>Login with Facebook</p>
-					</div>
+					{/*<div onClick={this.handleFBClick} className={classes.fb}>*/}
+						{/*<img src={FBLogo} alt=""/>*/}
+						{/*<p>Login with Facebook</p>*/}
+					{/*</div>*/}
 
 
-					<div className={classes.gl}>
-						<img src={GLLogo} alt=""/>
-						<p>Login with Google</p>
+					{/*<div className={classes.gl}>*/}
+						{/*<img src={GLLogo} alt=""/>*/}
+						{/*<p>Login with Google</p>*/}
 
-					</div>
+					{/*</div>*/}
 				</div>
 
 				<GoogleLogin
@@ -86,4 +98,4 @@ class Login extends React.Component{
 
 
 }
-export default Login;
+export default withRouter(Login);
