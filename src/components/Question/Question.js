@@ -30,13 +30,8 @@ class Question extends React.Component {
 				return response.json();
 			})
 			.then(data => {
-				// this.setState({redirect: true})
-				// sessionStorage.setItem("userData", JSON.stringify(data))
-				// let userD = JSON.parse(sessionStorage.getItem("userData"));
-				// sessionStorage.setItem("userData", JSON.stringify({...userD, points:userD.points+5}));
-				// this.props.rerenderHeader();
+
 				this.setState(prev => ({userData:{...prev.userData, points: prev.userData.points+5}}))
-				console.log("new points", this.state.userData.points)
 				this.toggleBgOverlay();
 
 				setTimeout(()=> {
@@ -46,9 +41,6 @@ class Question extends React.Component {
 				},1000)
 			});
 
-
-
-		// this.setState({url: "https://www.loremflickr.com/300/300"})
 	}
 
 	skipWord = () => {
@@ -57,7 +49,6 @@ class Question extends React.Component {
 	}
 	onAnswerChange = e => {
 		this.setState({answer: e.target.value})
-		console.log(e.target.value)
 	}
 
 	componentDidMount() {
@@ -84,7 +75,6 @@ class Question extends React.Component {
 						<div id="imageBox" className={classes.imageBox} style={{
 							backgroundImage: `url(${this.props.question.url})`
 						}}></div>
-						{/*<img src={this.props.data.image} alt="img"/>*/}
 						<div className={classes.languages}>
 							<p className={classes.english}>{this.props.question.word}</p>
 							<p className={classes.lao}>{this.props.question.lao}</p>

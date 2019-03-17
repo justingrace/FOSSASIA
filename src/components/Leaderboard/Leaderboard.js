@@ -37,7 +37,6 @@ class Leaderboard extends React.Component {
             })
             .catch(err=>console.log(err))
 
-        console.log(this.state.people)
 
     }
 
@@ -65,63 +64,7 @@ class Leaderboard extends React.Component {
                         )
                     })
                 }
-                {/*<div className={classes.person}>*/}
-                    {/*<div className={classes.left}>*/}
-                        {/*<img src={Wreath} alt="" />*/}
-                        {/*<p className={classes.name}>winner person</p>*/}
-                    {/*</div>*/}
-                    {/*<p className={classes.points}>120</p>*/}
-                {/*</div>*/}
 
-                {/*<div className={classes.person}>*/}
-                    {/*<div className={classes.left}>*/}
-                        {/*<img src={Wreath} alt="" />*/}
-                        {/*<p className={classes.name}>second person</p>*/}
-                    {/*</div>*/}
-
-                    {/*<p className={classes.points}>120</p>*/}
-                {/*</div>*/}
-
-                {/*<div className={classes.person}>*/}
-                    {/*<div className={classes.left}>*/}
-                        {/*<img src={Wreath} alt="" />*/}
-                        {/*<p className={classes.name}>third person</p>*/}
-                    {/*</div>*/}
-
-                    {/*<p className={classes.points}>120</p>*/}
-                {/*</div>*/}
-
-                {/*<div className={classes.person}>*/}
-                    {/*<div className={classes.left}>*/}
-                        {/*<div className={classes.noWreath}></div>*/}
-                        {/*<p className={classes.name}>loser person</p>*/}
-                    {/*</div>*/}
-                    {/*<p className={classes.points}>120</p>*/}
-                {/*</div>*/}
-
-                {/*<div className={classes.person}>*/}
-                    {/*<div className={classes.left}>*/}
-                        {/*<img src={Wreath} alt="" />*/}
-                        {/*<p className={classes.name}>loser person</p>*/}
-                    {/*</div>*/}
-                    {/*<p className={classes.points}>120</p>*/}
-                {/*</div>*/}
-
-                {/*<div className={classes.person}>*/}
-                    {/*<div className={classes.left}>*/}
-                        {/*<img src={Wreath} alt="" />*/}
-                        {/*<p className={classes.name}>loser person</p>*/}
-                    {/*</div>*/}
-                    {/*<p className={classes.points}>120</p>*/}
-                {/*</div>*/}
-
-                {/*<div className={classes.person}>*/}
-                    {/*<div className={classes.left}>*/}
-                        {/*<img src={Wreath} alt="" />*/}
-                        {/*<p className={classes.name}>loser person</p>*/}
-                    {/*</div>*/}
-                    {/*<p className={classes.points}>120</p>*/}
-                {/*</div>*/}
 
         </div>
     );

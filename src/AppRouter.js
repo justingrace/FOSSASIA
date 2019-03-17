@@ -23,7 +23,6 @@ class AppRouter extends React.Component{
                <Route path='/translator' component={Translator}/>
                <Route path='/main' component={MainMenu}/>
                <Route path='/leaderboard' component={Leaderboard}/>
-               {/*<Route path='/dictionary' component={Translator}/>*/}
 
                <Route path='/' component={Login}/>
            </Switch>

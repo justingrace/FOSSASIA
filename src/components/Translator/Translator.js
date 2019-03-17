@@ -13,7 +13,6 @@ class Translator extends React.Component {
 
 	submitForm = e => {
 		e.preventDefault();
-		console.log(this.state.input);
 
 		fetch('https://quirky-locket.glitch.me/translate', {
 			method: 'post',
@@ -27,9 +26,7 @@ class Translator extends React.Component {
 				return response.json();
 			})
 			.then(data => {
-				// console.log(data)
 				this.setState({output: data})
-				// sessionStorage.setItem("userData", JSON.stringify(data))
 			});
 	}
 	handleCrossClick = (e) => {
@@ -43,8 +40,6 @@ class Translator extends React.Component {
 				<Header/>
 				<div className={classes.top} onClick={()=>{document.getElementById("inputField").focus()}}>
 					<form autoComplete={"false"} onSubmit={this.submitForm}>
-						{/*<textarea className={classes.inputField} type="text" value={this.state.input} onChange={this.handleInputChange} />*/}
-						{/*<input type="submit"/>*/}
 						<input autoFocus={true} id={"inputField"} type="text"className={classes.inputField} type="text" value={this.state.input} onChange={this.handleInputChange}  />
 						<i id="closeIcon" onClick={this.handleCrossClick} className="material-icons">close</i>
 					</form>

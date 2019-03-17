@@ -36,26 +36,21 @@ class Header2 extends React.Component {
 
 	shouldComponentUpdate(nextProps, nextState, nextContext) {
 		if(this.state.userData.points != nextProps.points){
-			console.log("[]SHOULD UPDATE?")
-			console.log(nextProps.points)
+			// console.log("[]SHOULD UPDATE?")
+			// console.log(nextProps.points)
 			return true;
 		}
 		else return false;
 	}
 
 	componentDidMount() {
-		console.log("COMPONNENT DID MOUNT HEADER")
 
-		// console.log("HEADER")
 		let userData = JSON.parse(sessionStorage.getItem("userData"));
 		if(userData) {
 			this.setState(prev => ({userData}))
-			// console.log("HEADER user data found");
 		}
 
-
 	}
-
 
 	render() {
 		return (

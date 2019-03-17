@@ -15,7 +15,6 @@ class Header extends React.Component {
 	toggleMenu = (menu) => {
 		if(menu.classList.contains("active")) menu.classList.remove("active")
 		else {
-			console.log("showing menu!" + Date.now());
 			menu.classList.add("active");
 		}
 	}
@@ -27,7 +26,6 @@ class Header extends React.Component {
 	onMenuClick = () => {
 		let menu = document.getElementById("menu");
 		let extendedMenu = document.getElementById("extendedMenu");
-		console.log("click" + Date.now());
 
 		this.toggleMenu(menu);
 		this.toggleIcons(extendedMenu);
@@ -44,18 +42,13 @@ class Header extends React.Component {
 	}
 
 	componentDidMount() {
-		console.log("COMPONNENT DID MOUNT HEADER")
 
-		// console.log("HEADER")
 		let userData = JSON.parse(sessionStorage.getItem("userData"));
 		if(userData) {
 			this.setState(prev => ({userData}))
-			// console.log("HEADER user data found");
 		}
 
-
 	}
-
 
 	render() {
 		return (

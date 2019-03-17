@@ -6,19 +6,30 @@
   height: 100vh;
   justify-content: center;
   box-sizing: border-box;
+
+  button {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+  }
   
   .logo{
     height: 250px;
     width: 250px;
-    background: #000;
+    border-radius: 50%;
+    //background: #000;
   }
 
   .buttons{
+
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 20px;
     //background: red;
+
+
 
     .fb, .gl{
       width: 300px;

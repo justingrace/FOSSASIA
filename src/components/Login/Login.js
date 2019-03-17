@@ -1,8 +1,8 @@
 import React from "react";
 import classes from "./Login.scss";
 import {Route, withRouter} from 'react-router-dom';
-import FBLogo from '../../../assets/fb.svg';
-import GLLogo from '../../../assets/gl.svg';
+
+import Logo from '../../../assets/logo.jpeg';
 import GoogleLogin from "react-google-login";
 import FacebookLogin from "react-facebook-login";
 
@@ -14,7 +14,6 @@ class Login extends React.Component{
 
 	componentDidMount() {
 		const userData = sessionStorage.getItem("userData");
-		// console.log("USER EXISTS");
 		if(userData) this.props.history.push('/main')
 	}
 
@@ -48,12 +47,9 @@ class Login extends React.Component{
 	componentClicked = () => console.log("clicked");
 
 	responseFacebook = response => {
-		console.log(response);
 		this.signUp(response, "facebook");
 	};
 	responseGoogle = response => {
-		console.log(response);
-		console.log(response.Zi.id_token);
 		this.signUp(response, "google");
 
 	};
@@ -62,25 +58,13 @@ class Login extends React.Component{
 		return (
 			<div className={classes.Login}>
 
-				{/*{this.state.redirect && <Route to="/main" />}*/}
-				<div className={classes.logo}></div>
+				<img src={Logo} alt="" className={classes.logo} />
 				<div className={classes.buttons}>
-					{/*<div onClick={this.handleFBClick} className={classes.fb}>*/}
-						{/*<img src={FBLogo} alt=""/>*/}
-						{/*<p>Login with Facebook</p>*/}
-					{/*</div>*/}
-
-
-					{/*<div className={classes.gl}>*/}
-						{/*<img src={GLLogo} alt=""/>*/}
-						{/*<p>Login with Google</p>*/}
-
-					{/*</div>*/}
 				</div>
 
 				<GoogleLogin
 					clientId="392862027300-a4i9hiqarhho1hj4kveu55epe61oi2kl.apps.googleusercontent.com"
-					buttonText="Login"
+					buttonText="LOGIN"
 					onSuccess={this.responseGoogle}
 					onFailure={this.responseGoogle}
 				/>
@@ -89,6 +73,8 @@ class Login extends React.Component{
 					appId="1143888412437924"
 					autoLoad={false}
 					fields="name,email"
+					icon={"fa-facebook"}
+					textButton="Login"
 					onClick={this.componentClicked}
 					callback={this.responseFacebook}
 				/>

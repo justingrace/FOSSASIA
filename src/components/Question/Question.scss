@@ -45,8 +45,9 @@
     border-radius: 5px;
     border: none;
     height: 30px;
-    background: $black;
-    color: #fff;
+    background: white;
+    box-shadow: 0 7px 14px rgba(0,0,0,0.15), 0 3px 3px rgba(0,0,0,0.12);
+    color: #000;
     padding: 6px 10px;
     font-size: 14px;
   }
@@ -84,7 +85,7 @@
     width: 300px;
     border-radius: 8px;
     background-position: center;
-    background-size: 50%;
+    background-size: 60%;
     background-repeat: no-repeat;
     //background-image: url('../../../assets/loader.svg');
   }
