@@ -1,13 +1,12 @@
 import React from "react"
 import classes from "./Question.scss"
-import Header from "../QuestionLayout/QuestionLayout"
+import Header from "../UI/Header2/Header2";
 
 class Question extends React.Component {
 
 	state = {
 		answer: "",
 		userData: {}
-		// url: "https://www.loremflickr.com/220/220"
 	}
 
 	toggleBgOverlay = () => {
@@ -17,9 +16,7 @@ class Question extends React.Component {
 	}
 	submitForm = e => {
 		e.preventDefault();
-		console.log(this.state.userData.user_id);
-		console.log(this.props.question._id);
-		console.log(this.state.answer);
+
 
 		fetch('https://quirky-locket.glitch.me/answer', {
 			method: 'post',
@@ -35,6 +32,11 @@ class Question extends React.Component {
 			.then(data => {
 				// this.setState({redirect: true})
 				// sessionStorage.setItem("userData", JSON.stringify(data))
+				// let userD = JSON.parse(sessionStorage.getItem("userData"));
+				// sessionStorage.setItem("userData", JSON.stringify({...userD, points:userD.points+5}));
+				// this.props.rerenderHeader();
+				this.setState(prev => ({userData:{...prev.userData, points: prev.userData.points+5}}))
+				console.log("new points", this.state.userData.points)
 				this.toggleBgOverlay();
 
 				setTimeout(()=> {
@@ -67,7 +69,10 @@ class Question extends React.Component {
 	render() {
 		return (
 			<div className={classes.Question}>
-				{/*<Header />*/}
+				<Header points={this.state.userData.points} />
+
+
+
 				<div id="bgOverlay" className={classes.bgOverlay}>
 					<p>Good work!</p>
 					<p>🙌🏽</p>

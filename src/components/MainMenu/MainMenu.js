@@ -1,7 +1,7 @@
 import React from "react"
 import classes from "./MainMenu.scss"
-import DictIcon from "../../../assets/dict.png"
-import GameIcon from "../../../assets/game.svg"
+import DictIcon from "../../../assets/dict.jpeg"
+import GameIcon from "../../../assets/game.jpeg"
 import {Link} from "react-router-dom"
 
 

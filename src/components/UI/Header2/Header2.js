@@ -1,12 +1,12 @@
 import React from "react"
-import classes from "./Header.scss"
+import classes from "./Header2.scss"
 import Coin from "../../../../assets/coins.svg"
 import {Link} from 'react-router-dom';
 import Leaderboard from '../../../../assets/leaderboard.svg';
 import DictionaryIcon from '../../../../assets/dict.jpeg';
 import GameIcon from '../../../../assets/game.jpeg';
 
-class Header extends React.Component {
+class Header2 extends React.Component {
 
 	state = {
 		userData: {}
@@ -22,6 +22,7 @@ class Header extends React.Component {
 	toggleIcons = (extendedMenu) => {
 
 		if(extendedMenu.classList.contains("showIcons")) extendedMenu.classList.remove("showIcons");
+		// else extendedMenu.classList.add("showIcons");
 		else setTimeout(()=>{extendedMenu.classList.add("showIcons")}, 150)
 	}
 	onMenuClick = () => {
@@ -37,7 +38,6 @@ class Header extends React.Component {
 		if(this.state.userData.points != nextProps.points){
 			console.log("[]SHOULD UPDATE?")
 			console.log(nextProps.points)
-			this.setState()
 			return true;
 		}
 		else return false;
@@ -65,7 +65,7 @@ class Header extends React.Component {
 						<img src={Coin} alt=""/>
 					</Link>
 
-					<p>{this.state.userData.points}</p>
+					<p>{this.props.points}</p>
 				</div>
 				<div id="menu" onClick={this.onMenuClick} className={classes.menu}>
 					<i className="material-icons">home</i>
@@ -83,4 +83,4 @@ class Header extends React.Component {
 }
 
 
-export default Header
+export default Header2

@@ -19,7 +19,7 @@ header{
     }
     .menu{
 
-        //background: $white;
+        background: transparent;
         border-radius: 50%;
         @extend %nav-items;
         position: relative;
@@ -27,7 +27,7 @@ header{
         i{
             z-index: 2;
             opacity: 1;
-            color: white;
+            color: #fff;
             transition: all 0.1s ease-out;
 
         }

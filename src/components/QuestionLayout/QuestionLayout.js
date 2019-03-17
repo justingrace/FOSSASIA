@@ -29,6 +29,11 @@ class QuestionLayout extends React.Component {
 		]
 	}
 
+	setRerenderHeader = () => {
+		this.setState(this.state);
+
+	}
+
 	changeWord = () => {
 		const url= "https://quirky-locket.glitch.me/getword";
 		fetch(url)
@@ -56,8 +61,8 @@ class QuestionLayout extends React.Component {
 
 		return (
 			<div className={classes.QuestionLayout}>
-				<Header />
-				<Question question={this.state.currentWord} data={this.state.data[this.state.index]} incrementIndex={this.incrementIndex} />
+				{/*<Header />*/}
+				<Question rerenderHeader={this.setRerenderHeader } question={this.state.currentWord} data={this.state.data[this.state.index]} incrementIndex={this.incrementIndex} />
 			</div>
 		)
 	}

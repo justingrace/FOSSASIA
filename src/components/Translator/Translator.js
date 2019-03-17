@@ -5,7 +5,7 @@ import Header from "../UI/Header/Header"
 class Translator extends React.Component {
 	state = {
 		input: "",
-		output: "hha"
+		output: ""
 	}
 	handleInputChange = e => {
 		this.setState({input: e.target.value});
