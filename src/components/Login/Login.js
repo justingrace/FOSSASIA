@@ -75,6 +75,7 @@ class Login extends React.Component{
 					fields="name,email"
 					icon={"fa-facebook"}
 					textButton="Login"
+					disableMobileRedirect={true}
 					onClick={this.componentClicked}
 					callback={this.responseFacebook}
 				/>
